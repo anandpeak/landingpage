@@ -37,9 +37,14 @@ const Table = () => {
           Бүтээгдэхүүн турших
         </button>
         <div className="w-[2px] h-[24px] bg-[#E8E8E8]" />
-        <button className="w-[200px] px-4 py-2 rounded-3xl cursor-pointer">
+        <a
+          href="https://calendly.com/khurelbaatar/book-a-meeting-with-oneplace-hr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-[200px] px-4 py-2 rounded-3xl cursor-pointer text-center"
+        >
           Уулзалт товлох
-        </button>
+        </a>
       </div>
       <div className="flex w-full h-[40vh] mb-20 relative overflow-hidden">
         <AnimatePresence mode="wait">

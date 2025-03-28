@@ -41,12 +41,26 @@ const Footer = () => {
               +976 72728872
             </li>
             <li className="flex items-center gap-2 underline cursor-pointer">
-              <FiFacebook />
-              oneplace.hr
+              <a
+                href="https://www.facebook.com/metacog.mn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <FiFacebook />
+                oneplace.hr
+              </a>
             </li>
             <li className="flex items-center gap-2 underline cursor-pointer">
-              <IoLogoInstagram />
-              oneplace.hr
+              <a
+                href="https://www.instagram.com/oneplace_hr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <IoLogoInstagram />
+                oneplace.hr
+              </a>
             </li>
             <li className="flex items-center gap-2 underline cursor-pointer">
               <RiTwitterXLine />
