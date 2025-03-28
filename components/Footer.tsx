@@ -4,6 +4,8 @@ import { IoLogoInstagram } from "react-icons/io5";
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiTwitterXLine } from "react-icons/ri";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -41,7 +43,7 @@ const Footer = () => {
               +976 72728872
             </li>
             <li className="flex items-center gap-2 underline cursor-pointer">
-              <a
+              <Link
                 href="https://www.facebook.com/metacog.mn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -49,10 +51,10 @@ const Footer = () => {
               >
                 <FiFacebook />
                 oneplace.hr
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2 underline cursor-pointer">
-              <a
+              <Link
                 href="https://www.instagram.com/oneplace_hr/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -60,7 +62,7 @@ const Footer = () => {
               >
                 <IoLogoInstagram />
                 oneplace.hr
-              </a>
+              </Link>
             </li>
             <li className="flex items-center gap-2 underline cursor-pointer">
               <RiTwitterXLine />
@@ -70,7 +72,13 @@ const Footer = () => {
         </div>
         <div>
           <div className="flex items-center justify-center gap-1">
-            <img className="mt-3" src="/oneplaceIcon.svg" alt="icon" />
+            <Image
+              width={40}
+              height={17}
+              className="mt-3"
+              src="/oneplaceIcon.svg"
+              alt="icon"
+            />
             <p className="text-[#1C1C1C] text-[34px] font-bold">oneplace.hr</p>
           </div>
           <p className="mt-1 text-center">Where HR Team collaborate with AI</p>

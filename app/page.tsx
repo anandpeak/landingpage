@@ -11,6 +11,7 @@ import Integrations from "@/components/home/Integrations";
 import Pathway from "@/components/home/Pathway";
 import Table from "@/components/home/Table";
 import Talent from "@/components/home/Talent";
+import Image from "next/image";
 
 export default function Home() {
   const [chosen, setChosen] = useState<number>(1);
@@ -53,11 +54,22 @@ export default function Home() {
           className="text-center"
         >
           <div className="bg-cover bg-center flex items-center justify-center me-10">
-            <img className="w-[550px]" src="/img/home/bg.svg" alt="image" />
-            <img
-              className="absolute w-[680px] mt-10 rounded-xl"
+            <Image
+              className="w-[550px]"
+              src="/img/home/bg.svg"
+              alt="image"
+              width={550}
+              height={300}
+              layout="intrinsic"
+            />
+
+            <Image
+              className="absolute mt-10 rounded-xl"
               src="/img/home/dashboard.png"
+              width={680}
+              height={380}
               alt="dash"
+              layout="intrinsic"
             />
           </div>
         </motion.section>
@@ -66,9 +78,18 @@ export default function Home() {
       <div className="fixed bottom-14 left-20 z-50">
         <button
           className="flex items-center text-[#fff] gap-4 py-2 px-8 bg-[#EE8888] rounded-[50px] cursor-pointer"
-          onClick={scrollToTop}
+          onClick={() => {
+            if (isBottom) {
+              scrollToTop();
+            } else {
+              window.open(
+                "https://calendly.com/khurelbaatar/book-a-meeting-with-oneplace-hr",
+                "_blank"
+              );
+            }
+          }}
         >
-          {isBottom ? "Go Up" : "Book a Demo"}{" "}
+          {isBottom ? "Go Up" : "Book a Demo"}
           {isBottom ? <IoArrowUp /> : <IoArrowForward />}
         </button>
       </div>

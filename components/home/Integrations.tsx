@@ -13,13 +13,13 @@ const Integrations: React.FC = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let width = window.innerWidth;
-    let height = window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
 
     const dots: { x: number; y: number; dx: number; dy: number }[] = [];
-    let lines: [(typeof dots)[number], (typeof dots)[number]][] = [];
+    let lines: { x: number; y: number; dx: number; dy: number }[][] = [];
 
     for (let i = 0; i < 120; i++) {
       dots.push({

@@ -3,6 +3,8 @@
 import { MdLanguage } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [currentPath, setCurrentPath] = useState<string | null>(null);
@@ -21,34 +23,40 @@ export default function Header() {
       className="py-3"
     >
       <div className="container mx-auto flex justify-between items-center px-10">
-        <img className="h-[25px]" src="/oneplacehrLogo.svg" alt="logo" />
+        <Image
+          className="h-[25px]"
+          src="/oneplacehrLogo.svg"
+          alt="logo"
+          width={200}
+          height={25}
+        />
         <nav>
           <ul className="flex space-x-6">
             <li>
-              <a
+              <Link
                 href="/"
                 className={`${isActive("/")} rounded-[40px] px-4 py-3`}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/product"
                 className={`${isActive("/product")} rounded-[40px] px-4 py-3`}
               >
                 Product
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/case-study"
                 className={`${isActive(
                   "/case-study"
                 )} rounded-[40px] px-4 py-3`}
               >
                 Case Study
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

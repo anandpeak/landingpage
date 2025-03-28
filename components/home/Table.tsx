@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdArrowOutward } from "react-icons/md";
+import Link from "next/link";
+import Image from "next/image";
 
 const Table = () => {
   const [active, setActive] = useState<number>(1);
@@ -37,14 +39,14 @@ const Table = () => {
           Бүтээгдэхүүн турших
         </button>
         <div className="w-[2px] h-[24px] bg-[#E8E8E8]" />
-        <a
+        <Link
           href="https://calendly.com/khurelbaatar/book-a-meeting-with-oneplace-hr"
           target="_blank"
           rel="noopener noreferrer"
           className="w-[200px] px-4 py-2 rounded-3xl cursor-pointer text-center"
         >
           Уулзалт товлох
-        </a>
+        </Link>
       </div>
       <div className="flex w-full h-[40vh] mb-20 relative overflow-hidden">
         <AnimatePresence mode="wait">
@@ -130,7 +132,12 @@ const Table = () => {
                   <MdArrowOutward />
                 </button>
               </div>
-              <img src="/img/home/table/table.svg" alt="img" />
+              <Image
+                width={285}
+                height={285}
+                src="/img/home/table/table.svg"
+                alt="img"
+              />
             </motion.div>
           )}
         </AnimatePresence>
