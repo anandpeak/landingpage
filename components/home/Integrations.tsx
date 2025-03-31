@@ -93,40 +93,77 @@ const Integrations: React.FC = () => {
 
       {[
         {
-          src: "/img/home/integ/vertex.svg",
-          className: "top-32 left-60",
+          src: "/img/home/integ/viber.svg",
+          className: "top-1/5 left-1/6 h-24",
           x: -200,
           y: -200,
         },
         {
-          src: "/img/home/integ/green.svg",
-          className: "top-32 right-60",
+          src: "/img/home/integ/whatsapp.svg",
+          className: "top-1/8 left-1/3 ms-10 h-24",
+          x: -50,
+          y: -200,
+        },
+        {
+          src: "/img/home/integ/powerapp.svg",
+          className: "top-1/8 right-1/3 me-10 h-24",
+          x: 50,
+          y: -200,
+        },
+        {
+          src: "/img/home/integ/outlook.svg",
+          className: "top-1/5 right-1/5 h-20 mt-10",
           x: 200,
           y: -200,
-        },
-        {
-          src: "/img/home/integ/calendly.svg",
-          className: "bottom-32 left-60",
-          x: -200,
-          y: 200,
-        },
-        {
-          src: "/img/home/integ/teams.svg",
-          className: "bottom-32 right-[40%]",
-          y: 200,
         },
         {
           src: "/img/home/integ/odoo.svg",
-          className: "bottom-32 right-60",
+          className: "right-1/12",
+          x: 400,
+          y: 0,
+        },
+        {
+          src: "/img/home/integ/teams.svg",
+          className: "bottom-1/4 right-1/5 h-20",
           x: 200,
           y: 200,
+        },
+        {
+          src: "/img/home/integ/calendly.svg",
+          className: "bottom-1/10 right-1/3 ps-20",
+          x: 50,
+          y: 200,
+        },
+        {
+          src: "/img/home/integ/gsuite.svg",
+          className: "bottom-1/10 left-1/3 w-60 pe-20",
+          x: -50,
+          y: 200,
+        },
+        // {
+        //   src: "/img/home/integ/vertex.svg",
+        //   className: "top-32 left-60",
+        //   x: -200,
+        //   y: -200,
+        // },
+        {
+          src: "/img/home/integ/green.svg",
+          className: "bottom-1/4 left-1/8",
+          x: -200,
+          y: 200,
+        },
+        {
+          src: "/img/home/integ/oauth.svg",
+          className: "left-1/12 h-26",
+          x: -400,
+          y: 0,
         },
       ].map((item, index) => (
         <motion.img
           key={index}
           src={item.src}
           alt="Integration Logo"
-          className={`absolute h-16 ${item.className}`}
+          className={`absolute ${item.className} h-16`}
           initial={{ opacity: 0, x: item.x, y: item.y }}
           animate={
             isInView
