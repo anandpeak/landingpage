@@ -34,17 +34,15 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-between mx-28 mt-20">
+      <div className="flex items-center justify-between mx-28 mt-20 gap-20">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-[28px] font-bold">
-            Where HR Team and AI collaborate
-          </p>
-          <p className="mt-7 w-[330px] text-[19px] leading-12">
-            Recruiting & Onboarding on auto-pilot Employee engagement with Games
+          <p className="text-[69px]  text-center font-bold">
+            Where <br /> HR Team and AI <br />
+            <span className="text-[#EA8B88]">Collaborate</span>
           </p>
         </motion.section>
         <motion.section
@@ -77,7 +75,7 @@ export default function Home() {
       <InfiniteCarousel />
       <div className="fixed bottom-14 left-20 z-50">
         <button
-          className="flex items-center text-[#fff] gap-4 py-2 px-8 bg-[#EE8888] rounded-[50px] cursor-pointer"
+          className="flex items-center text-[#fff] gap-4 py-2 px-8 bg-[#EA8B88] rounded-[50px] cursor-pointer"
           onClick={() => {
             if (isBottom) {
               scrollToTop();

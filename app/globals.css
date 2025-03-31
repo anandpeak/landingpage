@@ -1,3 +1,29 @@
 @import "tailwindcss";
 
+/* Define Custom Fonts */
+@font-face {
+  font-family: "GIP-Regular";
+  src: url("/fonts/GIP-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "GIP-Bold";
+  src: url("/fonts/GIP-ExtraBoldItalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GIP-Italic";
+  src: url("/fonts/GIP-RegularItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Apply to Body */
+body {
+  background-color: rgb(245, 246, 246);
+  font-family: "GIP-Regular", sans-serif;
+}
