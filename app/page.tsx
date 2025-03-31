@@ -34,14 +34,14 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-between mx-28 mt-20 gap-20">
+      <div className="flex flex-col lg:flex-row items-center justify-between mx-6 lg:mx-28 mt-20 gap-10 lg:gap-20 text-center lg:text-left">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-[69px]  text-center font-bold">
-            Where <br /> HR Team and AI <br />
+          <p className="text-[42px] lg:text-[69px] font-bold leading-tight text-center">
+            Where <br className="hidden lg:block" /> HR Team and AI <br />
             <span className="text-[#EA8B88]">Collaborate</span>
           </p>
         </motion.section>
@@ -49,33 +49,32 @@ export default function Home() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center"
         >
-          <div className="bg-cover bg-center flex items-center justify-center me-10">
+          <div className="relative flex items-center justify-center">
             <Image
-              className="w-[550px]"
+              className="w-[320px] lg:w-[550px]"
               src="/img/home/bg.svg"
-              alt="image"
+              alt="background image"
               width={550}
               height={300}
               layout="intrinsic"
             />
 
             <Image
-              className="absolute mt-10 rounded-xl"
+              className="absolute  rounded-xl w-[360px] lg:w-[680px]"
               src="/img/home/dashboard.png"
               width={680}
               height={380}
-              alt="dash"
+              alt="dashboard"
               layout="intrinsic"
             />
           </div>
         </motion.section>
       </div>
       <InfiniteCarousel />
-      <div className="fixed bottom-14 left-20 z-50">
+      <div className="fixed bottom-10 left-5 sm:left-5 lg:left-20 z-50">
         <button
-          className="flex items-center text-[#fff] gap-4 py-2 px-8 bg-[#EA8B88] rounded-[50px] cursor-pointer"
+          className="flex items-center text-[#fff] gap-4 py-2 px-6 lg:px-8 bg-[#EA8B88] rounded-[50px] cursor-pointer text-sm lg:text-base"
           onClick={() => {
             if (isBottom) {
               scrollToTop();
@@ -91,8 +90,8 @@ export default function Home() {
           {isBottom ? <IoArrowUp /> : <IoArrowForward />}
         </button>
       </div>
-      <div className="mb-10">
-        <p className="font-semibold text-[24px] ms-40 mt-20">
+      <div className="mb-10 text-center lg:text-left lg:ms-40">
+        <p className="font-semibold text-[20px] lg:text-[24px] mt-10 lg:mt-20">
           Employee Journey
         </p>
       </div>

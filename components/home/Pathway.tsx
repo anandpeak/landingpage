@@ -61,9 +61,9 @@ export default function Pathway() {
   return (
     <div
       ref={ref}
-      className="relative flex flex-wrap items-center justify-between ps-36 pe-44 h-screen mb-20"
+      className="relative flex flex-wrap items-center md:justify-between justify-center md:ps-36 md:pe-44 md:h-screen h-auto md:mb-20"
     >
-      <div className="absolute ms-20 flex justify-center items-center">
+      <div className="absolute ms-32 md:flex sm:hidden hidden justify-center items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="993"
@@ -92,11 +92,11 @@ export default function Pathway() {
         const adjustedIndex = index < 3 ? index : steps.length - (index - 2);
 
         return (
-          <div key={steps[adjustedIndex].id}>
+          <div className="" key={steps[adjustedIndex].id}>
             <div
-              className={`relative flex justify-center items-center my-2 ${
-                adjustedIndex === 1 ? "me-8 " : ""
-              } ${adjustedIndex === 4 ? "me-8 mt-10" : ""}`}
+              className={`relative flex justify-center items-center my-2 md:mx-10  ${
+                adjustedIndex > 2 && "mt-20"
+              }`}
             >
               <motion.div
                 ref={ref}

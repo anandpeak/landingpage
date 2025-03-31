@@ -124,7 +124,7 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
             <div className="w-[50%] h-full flex flex-col justify-between">
               {chosen === 1 ? (
                 <>
-                  <p className="text-[50px] text-[#333] font-semibold">
+                  <p className="text-[40px] text-[#333] font-semibold">
                     AI-Recruiter
                   </p>
                   <p className="text-[#888] text-[24px]">
@@ -136,7 +136,7 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
                 </>
               ) : chosen === 2 ? (
                 <>
-                  <p className="text-[50px] text-[#333] font-semibold leading-14">
+                  <p className="text-[40px] text-[#333] font-semibold leading-14">
                     Game-Based Assessments
                   </p>
                   <p className="text-[#888] text-[24px]">
@@ -147,7 +147,7 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
                 </>
               ) : (
                 <>
-                  <p className="text-[50px] text-[#333] font-semibold">
+                  <p className="text-[40px] text-[#333] font-semibold">
                     Gamified Onboarding
                   </p>
                   <p className="text-[#888] text-[24px]">

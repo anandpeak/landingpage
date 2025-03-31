@@ -38,12 +38,12 @@ const InfiniteCarousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden relative w-full bg-white py-6 mt-40 mb-20">
+    <div className="overflow-hidden relative w-full  py-6 mt-40 mb-20">
       <motion.div
         ref={carouselRef}
         className="flex space-x-16 w-max"
         animate={{
-          x: ["0%", `-${carouselWidth / 2 + 40}px`],
+          x: ["0%", `-${carouselWidth / 2 + 32}px`],
         }}
         transition={{
           x: {
@@ -61,7 +61,7 @@ const InfiniteCarousel: React.FC = () => {
             alt="logo"
             width={64}
             height={64}
-            className="h-16 w-auto"
+            className="lg:h-16 w-auto sm:h-10 h-10"
             priority
           />
         ))}
