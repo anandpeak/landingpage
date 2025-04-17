@@ -2,10 +2,26 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const sections = [
-  { id: "pulse-surveys", name: "Pulse Surveys" },
-  { id: "feedback", name: "Feedback" },
-  { id: "ona", name: "ONA" },
-  { id: "burnout-assessment", name: "Burnout Assessment" },
+  {
+    id: "pulse-surveys",
+    name: "Pulse Surveys",
+    desc: "Gamified pulse survey pushes participation rate to the 90% and above",
+  },
+  {
+    id: "feedback",
+    name: "Feedback",
+    desc: "People love giving and receiving feedback that is constructive and truthful.Our system is designed for that!",
+  },
+  {
+    id: "ona",
+    name: "ONA",
+    desc: "Organizational Network Analysis let leaders get to know the relationship amongst the Team and make critical changes to retain top talents",
+  },
+  {
+    id: "burnout-assessment",
+    name: "Burnout Assessment",
+    desc: "We measure physical, emotional and cognitive fatiques and with AI generate recommendations",
+  },
 ];
 
 export default function Engagement() {
@@ -60,15 +76,30 @@ export default function Engagement() {
                 activeSection === section.id && (
                   <motion.section
                     key={section.id}
-                    className="h-full flex items-center justify-center border border-[#e6e6e6] rounded-4xl p-10 shadow-md"
+                    className="h-full flex items-center justify-between gap-10 border border-[#e6e6e6] rounded-4xl p-10 shadow-md"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <h2 className="text-2xl font-semibold">
-                      {section.name} Content
-                    </h2>
+                    <div className="w-[50%] h-full">
+                      <div className="w-full h-full bg-[#cfcfcf] rounded-xl"></div>
+                    </div>
+                    <div className="w-[50%] h-full flex flex-col justify-between">
+                      <p className="text-[40px] text-[#333] font-semibold">
+                        {section.name}
+                      </p>
+                      <p className="text-[#888] text-[24px]">{section.desc}</p>
+
+                      <div className="flex items-center gap-4">
+                        <button className="text-[#fff] text-sm font-semibold bg-[#EE8888] px-4 py-3 rounded-xl cursor-pointer">
+                          Get Started
+                        </button>
+                        <button className="text-[#333] text-sm font-semibold bg-[#ebebeb] px-4 py-3 rounded-xl cursor-pointer">
+                          Learn More
+                        </button>
+                      </div>
+                    </div>
                   </motion.section>
                 )
             )}
