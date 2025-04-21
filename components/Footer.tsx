@@ -9,8 +9,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="pt-10 pb-6 px-[12vw] text-black mt-10">
-      <div className="flex justify-between w-full">
+    <footer className="pt-10 pb-6 px-[12vw] text-black mt-10 bg-[#f7f7f7]">
+      <div className="flex md:flex-row sm:flex-col flex-col justify-between w-full sm:space-y-10 space-y-10 md:space-y-0">
         <div>
           <h3 className="font-semibold mb-3">Бүтээгдэхүүн</h3>
           <ul className="space-y-2 text-sm">

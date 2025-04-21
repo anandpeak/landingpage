@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden bg-[#fff]">
       <div className="flex flex-col lg:flex-row items-center justify-between mx-6 lg:mx-28 mt-20 gap-10 lg:gap-20 text-center lg:text-left">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
@@ -90,7 +90,7 @@ export default function Home() {
           {isBottom ? <IoArrowUp /> : <IoArrowForward />}
         </button>
       </div>
-      <div className="mb-10 text-center lg:text-left lg:ms-40">
+      <div className="mb-10 text-left md:ms-40 sm:ms-8 ms-8">
         <p className="font-semibold text-[20px] lg:text-[24px] mt-10 lg:mt-20">
           Employee Journey
         </p>

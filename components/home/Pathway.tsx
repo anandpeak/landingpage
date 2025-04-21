@@ -61,7 +61,7 @@ export default function Pathway() {
   return (
     <div
       ref={ref}
-      className="relative flex flex-wrap items-center md:justify-between justify-center md:ps-36 md:pe-44 md:h-screen h-auto md:mb-20"
+      className="relative flex flex-wrap items-center md:justify-between justify-center md:ps-36 md:pe-44 md:h-screen h-auto mb-20 "
     >
       <div className="absolute ms-32 md:flex sm:hidden hidden justify-center items-center">
         <svg
@@ -94,7 +94,7 @@ export default function Pathway() {
         return (
           <div className="" key={steps[adjustedIndex].id}>
             <div
-              className={`relative flex justify-center items-center my-2 md:mx-10  ${
+              className={`relative flex justify-center items-center sm:my-8 my-8 md:mx-10 ${
                 adjustedIndex > 2 && "mt-20"
               }`}
             >
@@ -112,18 +112,25 @@ export default function Pathway() {
               >
                 <div className="flex flex-col justify-center items-center">
                   {adjustedIndex % 2 === 1 && (
-                    <p className="w-[280px] mb-6 text-center">
+                    <p className="w-[280px] mb-6 text-center hidden sm:block">
                       {steps[adjustedIndex].description}
                     </p>
                   )}
+
                   <div className="relative flex flex-col items-center justify-center w-[180px] h-[180px] rounded-full text-center bg-[#e6e6e6] p-4">
                     <span className="text-2xl">
                       {steps[adjustedIndex].emoji}
                     </span>
                     <p className="text-[18px]">{steps[adjustedIndex].title}</p>
                   </div>
+
+                  {(adjustedIndex % 2 === 0 || true) && (
+                    <p className="w-[280px] mt-6 text-center block sm:hidden">
+                      {steps[adjustedIndex].description}
+                    </p>
+                  )}
                   {adjustedIndex % 2 === 0 && (
-                    <p className="w-[280px] mt-6 text-center">
+                    <p className="w-[280px] mt-6 text-center hidden sm:block">
                       {steps[adjustedIndex].description}
                     </p>
                   )}

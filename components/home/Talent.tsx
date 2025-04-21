@@ -8,9 +8,9 @@ interface TalentProps {
 
 const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
   const getSvgPosition = () => {
-    if (chosen === 1) return "-left-[68px]";
-    if (chosen === 2) return "left-[214px]";
-    if (chosen === 3) return "left-[496px]";
+    if (chosen === 1) return "left-0 md:-left-[68px]";
+    if (chosen === 2) return "left-[0] md:left-[214px]";
+    if (chosen === 3) return "left-[0] md:left-[496px]";
     return "left-0";
   };
 
@@ -29,14 +29,14 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
   };
 
   return (
-    <div className="mx-[12vw] mt-20">
-      <p className="text-[34px] font-semibold mb-10">
+    <div className="mx-[5vw] md:mx-[12vw] mt-10 md:mt-20">
+      <p className="text-[24px] md:text-[34px] font-semibold mb-6 md:mb-10">
         Talent Acquisition Module
       </p>
-      <div className="mb-20 overflow-hidden">
-        <div className="flex items-center gap-8 pb-2 relative ">
+      <div className="mb-10 md:mb-20 overflow-hidden">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 pb-2 relative">
           <svg
-            className={`absolute top-0 z-10 transition-all duration-300 ${getSvgPosition()}`}
+            className={`absolute top-0 z-10 transition-all duration-300 ${getSvgPosition()} hidden md:block `}
             width="387"
             height="90"
             viewBox="0 0 378 110"
@@ -63,71 +63,52 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
             />
           </svg>
 
-          <div
-            onClick={() => setChosen(1)}
-            className={`w-[250px] h-[60px] bg-[#f7f7f7] rounded-[20px] flex items-center justify-center cursor-pointer relative ${
-              chosen === 1 ? "" : "z-20"
-            }`}
-          >
-            <p
-              onClick={() => setChosen(1)}
-              className={`${
-                chosen === 1 ? "text-[#fff]" : "text-[#000]"
-              } relative z-20`}
+          {[
+            "AI-Recruiter",
+            "Game-Based Assessments",
+            "Gamified Onboarding",
+          ].map((label, index) => (
+            <div
+              key={index}
+              onClick={() => setChosen(index + 1)}
+              className={`w-full md:w-[250px] h-[60px] md:bg-[#f7f7f7] rounded-[20px] flex items-center justify-center cursor-pointer relative ${
+                chosen === index + 1 ? "sm:bg-[#EE8888] bg-[#EE8888]" : "z-20"
+              }`}
             >
-              AI-Recruiter
-            </p>
-          </div>
-          <div
-            onClick={() => setChosen(2)}
-            className={`w-[250px] h-[60px] bg-[#f7f7f7] rounded-[20px] flex items-center justify-center cursor-pointer relative ${
-              chosen === 2 ? "" : "z-20"
-            }`}
-          >
-            <p
-              onClick={() => setChosen(2)}
-              className={`${
-                chosen === 2 ? "text-[#fff]" : "text-[#000]"
-              } relative z-20`}
-            >
-              Game-Based Assessments
-            </p>
-          </div>
-          <div
-            onClick={() => setChosen(3)}
-            className={`w-[250px] h-[60px] bg-[#f7f7f7] rounded-[20px] flex items-center justify-center cursor-pointer relative ${
-              chosen === 3 ? "" : "z-20"
-            }`}
-          >
-            <p
-              onClick={() => setChosen(3)}
-              className={`${
-                chosen === 3 ? "text-[#fff]" : "text-[#000]"
-              } relative z-20`}
-            >
-              Gamified Onboarding
-            </p>
-          </div>
+              <p
+                className={`${
+                  chosen === index + 1 ? "text-[#fff]" : "text-[#000]"
+                } relative z-20`}
+              >
+                {label}
+              </p>
+            </div>
+          ))}
         </div>
-        <div className="w-full h-[50vh] rounded-[20px] border-2 border-[#EE8888] relative z-20 bg-[#fff] flex justify-between gap-8 p-10 overflow-hidden">
+
+        <div className="w-full min-h-[50vh] rounded-[20px] border-2 border-[#EE8888] relative z-20 bg-[#fff] flex flex-col md:flex-row justify-between gap-6 md:gap-8 p-6 md:p-10 overflow-hidden">
           <motion.div
-            key={chosen} // This ensures Framer Motion detects changes
+            key={chosen}
             variants={transitionVariants}
             initial="initial"
             animate="animate"
             exit="exit"
-            className="w-full h-full flex justify-between gap-8"
+            className="w-full h-full flex flex-col md:flex-row justify-between gap-6 md:gap-8"
           >
-            <div className="w-[50%] h-full">
-              <div className="w-full h-full bg-[#cfcfcf] rounded-xl"></div>
+            <div className="w-full md:w-[50%] h-[200px] md:h-full">
+              <img
+                className="w-full h-full bg-[#cfcfcf] rounded-xl"
+                src="/img/home/talent/gamifiedOnboard.png"
+                alt="img"
+              />
             </div>
-            <div className="w-[50%] h-full flex flex-col justify-between">
+            <div className="w-full md:w-[50%] flex flex-col justify-between gap-4">
               {chosen === 1 ? (
                 <>
-                  <p className="text-[40px] text-[#333] font-semibold">
+                  <p className="text-[28px] md:text-[40px] text-[#333] font-semibold">
                     AI-Recruiter
                   </p>
-                  <p className="text-[#888] text-[24px]">
+                  <p className="text-[#888] text-[16px] md:text-[24px]">
                     Pre-trained and modified AI-Recruiter that understands your
                     business and hiring needs conducts first interviews via
                     messaging platforms saving tons of time for your recruiting
@@ -136,10 +117,10 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
                 </>
               ) : chosen === 2 ? (
                 <>
-                  <p className="text-[40px] text-[#333] font-semibold leading-14">
+                  <p className="text-[28px] md:text-[40px] text-[#333] font-semibold leading-10">
                     Game-Based Assessments
                   </p>
-                  <p className="text-[#888] text-[24px]">
+                  <p className="text-[#888] text-[16px] md:text-[24px]">
                     There is only 13% correlation between CV and Performance.
                     Prioritizing cognitive abilities improves chances to hire
                     high potential candidates
@@ -147,10 +128,10 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
                 </>
               ) : (
                 <>
-                  <p className="text-[40px] text-[#333] font-semibold">
+                  <p className="text-[28px] md:text-[40px] text-[#333] font-semibold">
                     Gamified Onboarding
                   </p>
-                  <p className="text-[#888] text-[24px]">
+                  <p className="text-[#888] text-[16px] md:text-[24px]">
                     Transform onboarding into an exciting journey with our
                     gamified platform! New hires conquer tasks, unlock rewards,
                     and stay motivated while seamlessly integrating into the
@@ -158,11 +139,11 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
                   </p>
                 </>
               )}
-              <div className="flex items-center gap-4">
-                <button className="text-[#fff] text-sm font-semibold bg-[#EE8888] px-4 py-3 rounded-xl cursor-pointer">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <button className="text-[#fff] text-sm font-semibold bg-[#EE8888] px-4 py-3 rounded-xl cursor-pointer w-full sm:w-auto">
                   Get Started
                 </button>
-                <button className="text-[#333] text-sm font-semibold bg-[#ebebeb] px-4 py-3 rounded-xl cursor-pointer">
+                <button className="text-[#333] text-sm font-semibold bg-[#ebebeb] px-4 py-3 rounded-xl cursor-pointer w-full sm:w-auto">
                   Learn More
                 </button>
               </div>

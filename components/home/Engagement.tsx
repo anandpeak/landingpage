@@ -5,21 +5,25 @@ const sections = [
   {
     id: "pulse-surveys",
     name: "Pulse Surveys",
+    img: "/img/home/engagement/survey.png",
     desc: "Gamified pulse survey pushes participation rate to the 90% and above",
   },
   {
     id: "feedback",
     name: "Feedback",
-    desc: "People love giving and receiving feedback that is constructive and truthful.Our system is designed for that!",
+    img: "/img/home/engagement/feedback.png",
+    desc: "People love giving and receiving feedback that is constructive and truthful. Our system is designed for that!",
   },
   {
     id: "ona",
     name: "ONA",
+    img: "/img/home/engagement/",
     desc: "Organizational Network Analysis let leaders get to know the relationship amongst the Team and make critical changes to retain top talents",
   },
   {
     id: "burnout-assessment",
     name: "Burnout Assessment",
+    img: "/img/home/engagement/burnout.png",
     desc: "We measure physical, emotional and cognitive fatiques and with AI generate recommendations",
   },
 ];
@@ -37,11 +41,31 @@ export default function Engagement() {
   );
 
   return (
-    <div className="mx-[12vw] mb-20">
-      <p className="text-[34px] mb-10">Employee Engagement Module</p>
-      <div className="flex mb-20">
+    <div className="mx-[6vw] md:mx-[12vw] mb-20">
+      <p className="text-[28px] md:text-[34px] mb-10">
+        Employee Engagement Module
+      </p>
+
+      {/* Mobile Tabs */}
+      <div className="flex flex-wrap gap-4 mb-10 md:hidden">
+        {sections.map((section) => (
+          <button
+            key={section.id}
+            className={`px-4 py-2 rounded-full text-sm ${
+              activeSection === section.id
+                ? "bg-[#ff8888] text-white"
+                : "bg-[#f0f0f0] text-black"
+            }`}
+            onClick={() => handleClick(section.id)}
+          >
+            {section.name}
+          </button>
+        ))}
+      </div>
+
+      <div className="flex flex-col md:flex-row mb-20 gap-8">
         {/* Sidebar */}
-        <nav className="w-1/4">
+        <nav className="hidden md:block md:w-1/4">
           <div className="me-2 flex items-start gap-20">
             <div>
               {sections.map((section) => (
@@ -57,7 +81,7 @@ export default function Engagement() {
               ))}
             </div>
             <div
-              className="w-[8px] rounded-2xl border-2  border-[#F8F8F8] bg-[#E6E6E6] relative mt-5"
+              className="w-[8px] rounded-2xl border-2 border-[#F8F8F8] bg-[#E6E6E6] relative mt-5"
               style={{ height: `${sections.length * 50}px` }}
             >
               <motion.div
@@ -69,36 +93,34 @@ export default function Engagement() {
           </div>
         </nav>
 
-        <div className="w-3/4 h-[60vh]">
+        {/* Content */}
+        <div className="w-full md:w-3/4 h-auto md:h-[40vh]">
           <AnimatePresence mode="wait">
             {sections.map(
               (section) =>
                 activeSection === section.id && (
                   <motion.section
                     key={section.id}
-                    className="h-full flex items-center justify-between gap-10 border border-[#e6e6e6] rounded-4xl p-10 shadow-md"
+                    className="h-auto md:h-full flex flex-col md:flex-row items-center justify-between gap-10 border border-[#e6e6e6] rounded-4xl p-6 md:p-8 shadow-md"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="w-[50%] h-full">
-                      <div className="w-full h-full bg-[#cfcfcf] rounded-xl"></div>
+                    <div className="w-full md:w-[50%] h-[120px] md:h-full object-cover rounded-xl">
+                      <img
+                        className="w-full h-full object-contain rounded-xl"
+                        src={section.img}
+                        alt={section.name}
+                      />
                     </div>
-                    <div className="w-[50%] h-full flex flex-col justify-between">
-                      <p className="text-[40px] text-[#333] font-semibold">
+                    <div className="w-full md:w-[50%] h-auto md:h-full flex flex-col gap-4">
+                      <p className="text-[28px] md:text-[34px] text-[#333] font-semibold">
                         {section.name}
                       </p>
-                      <p className="text-[#888] text-[24px]">{section.desc}</p>
-
-                      <div className="flex items-center gap-4">
-                        <button className="text-[#fff] text-sm font-semibold bg-[#EE8888] px-4 py-3 rounded-xl cursor-pointer">
-                          Get Started
-                        </button>
-                        <button className="text-[#333] text-sm font-semibold bg-[#ebebeb] px-4 py-3 rounded-xl cursor-pointer">
-                          Learn More
-                        </button>
-                      </div>
+                      <p className="text-[#888] text-[18px] md:text-[24px]">
+                        {section.desc}
+                      </p>
                     </div>
                   </motion.section>
                 )
