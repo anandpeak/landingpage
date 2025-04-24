@@ -5,25 +5,25 @@ const sections = [
   {
     id: "pulse-surveys",
     name: "Pulse Surveys",
-    img: "/img/home/engagement/survey.png",
+    img: "/img/home/engagement/survey.gif",
     desc: "Gamified pulse survey pushes participation rate to the 90% and above",
   },
   {
     id: "feedback",
     name: "Feedback",
-    img: "/img/home/engagement/feedback.png",
+    img: "/img/home/engagement/feedback.gif",
     desc: "People love giving and receiving feedback that is constructive and truthful. Our system is designed for that!",
   },
   {
     id: "ona",
     name: "ONA",
-    img: "/img/home/engagement/Ona.png",
+    img: "/img/home/engagement/Ona.gif",
     desc: "Organizational Network Analysis let leaders get to know the relationship amongst the Team and make critical changes to retain top talents",
   },
   {
     id: "burnout-assessment",
     name: "Burnout Assessment",
-    img: "/img/home/engagement/burnout.png",
+    img: "/img/home/engagement/burnout.gif",
     desc: "We measure physical, emotional and cognitive fatiques and with AI generate recommendations",
   },
 ];
