@@ -10,9 +10,9 @@ const Table = () => {
   return (
     <div className="mx-[6vw] sm:mx-[12vw] mt-10 sm:mt-20">
       <p className="text-[20px] sm:text-[24px] sm:w-[700px] font-semibold mb-6 sm:mb-10">
-        Уламжлалт Хүний нөөцийн{" "}
-        <span className="text-[#DC7F71]">үйл ажиллагааг тоглоомчилж</span>,
-        шинэлэгээр тодорхойлно.
+        Gamifying traditional Human Resources{" "}
+        <span className="text-[#DC7F71]">operations and redefining</span> them
+        in an innovative way.
       </p>
 
       {/* Tabs */}
@@ -34,7 +34,7 @@ const Table = () => {
             } ${active === 1 ? "text-[#fff]" : "text-[#000]"}`}
             onClick={() => setActive(1)}
           >
-            Шууд холбогдох
+            Contact us
           </button>
           <div className="hidden sm:block w-[2px] h-[24px] bg-[#E8E8E8]" />
           <button
@@ -43,7 +43,7 @@ const Table = () => {
             } ${active === 2 ? "text-[#fff]" : "text-[#000]"}`}
             onClick={() => setActive(2)}
           >
-            Бүтээгдэхүүн турших
+            Test the product
           </button>
           <div className="hidden sm:block w-[2px] h-[24px] bg-[#E8E8E8]" />
           <Link
@@ -52,7 +52,7 @@ const Table = () => {
             rel="noopener noreferrer"
             className="w-full sm:w-[200px] px-4 py-2 rounded-3xl cursor-pointer text-center"
           >
-            Уулзалт товлох
+            Book a meeting
           </Link>
         </div>
       </div>
@@ -74,8 +74,8 @@ const Table = () => {
               }}
             >
               <p className="font-light text-center">
-                *Та утсаар залгахаар бол ажлын цагаар (09:00 - 18:00 цагийн
-                хооронд) холбогдоно уу. Баярлалаа.
+                *If you choose to call, please do so during working hours
+                (between 09:00 and 18:00). Thank you
               </p>
             </motion.div>
           )}
@@ -95,16 +95,16 @@ const Table = () => {
             >
               <div>
                 <div className="mb-3">
-                  <p className="ms-2">Нэр</p>
+                  <p className="ms-2">Name</p>
                   <input
                     className="bg-[#F8F8F8] py-2 px-4 w-full sm:w-[400px] border border-[#efefef] rounded-xl"
-                    placeholder="Нэр"
+                    placeholder="Name"
                     type="text"
                   />
                 </div>
                 <div className="mb-3 flex flex-col sm:flex-row sm:items-center gap-4">
                   <div className="flex-1">
-                    <p className="ms-2">Утасны дугаар</p>
+                    <p className="ms-2">Phone Number</p>
                     <input
                       className="bg-[#F8F8F8] py-2 px-4 w-full border border-[#efefef] rounded-xl"
                       placeholder="XXXX-XXXX"
@@ -112,7 +112,7 @@ const Table = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <p className="ms-2">Цахим шуудан</p>
+                    <p className="ms-2">Email</p>
                     <input
                       className="bg-[#F8F8F8] py-2 px-4 w-full border border-[#efefef] rounded-xl"
                       placeholder="example@gmail.com"
@@ -122,15 +122,15 @@ const Table = () => {
                 </div>
                 <div className="mb-3 flex flex-col sm:flex-row sm:items-center gap-4">
                   <div className="flex-1">
-                    <p className="ms-2">Компаний нэр</p>
+                    <p className="ms-2">Company Name</p>
                     <input
                       className="bg-[#F8F8F8] py-2 px-4 w-full border border-[#efefef] rounded-xl"
-                      placeholder="Нэр"
+                      placeholder="Name"
                       type="text"
                     />
                   </div>
                   <div className="flex-1">
-                    <p className="ms-2">Ажилтны тоо</p>
+                    <p className="ms-2">Number of Employees</p>
                     <input
                       className="bg-[#F8F8F8] py-2 px-4 w-full border border-[#efefef] rounded-xl"
                       placeholder="10-20"
@@ -139,7 +139,7 @@ const Table = () => {
                   </div>
                 </div>
                 <button className="w-full sm:w-[400px] flex items-center justify-center gap-3 rounded-3xl py-2 bg-[#DC7F71] text-[#fff] cursor-pointer">
-                  Хүсэлт илгээх
+                  Submit Request
                   <MdArrowOutward />
                 </button>
               </div>

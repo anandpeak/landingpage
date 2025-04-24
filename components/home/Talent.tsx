@@ -93,14 +93,22 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="w-full h-full flex flex-col md:flex-row justify-between gap-6 md:gap-8"
+            className="w-full h-full flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8"
           >
-            <div className="w-full md:w-[50%] h-[200px] md:h-full">
-              <img
-                className="w-full h-full bg-[#cfcfcf] rounded-xl"
-                src="/img/home/talent/gamifiedOnboard.png"
-                alt="img"
-              />
+            <div className="w-full md:w-[50%] h-[200px] md:h-full ">
+              {chosen === 2 ? (
+                <img
+                  className="w-full h-full object-contain rounded-xl"
+                  src="/img/home/talent/Assessment.png"
+                  alt="img"
+                />
+              ) : (
+                <img
+                  className="w-full h-full object-contain rounded-xl"
+                  src="/img/home/talent/gamifiedOnboard.png"
+                  alt="img"
+                />
+              )}
             </div>
             <div className="w-full md:w-[50%] flex flex-col justify-between gap-4">
               {chosen === 1 ? (

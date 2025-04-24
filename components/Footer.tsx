@@ -12,27 +12,27 @@ const Footer = () => {
     <footer className="pt-10 pb-6 px-[12vw] text-black mt-10 bg-[#f7f7f7]">
       <div className="flex md:flex-row sm:flex-col flex-col justify-between w-full sm:space-y-10 space-y-10 md:space-y-0">
         <div>
-          <h3 className="font-semibold mb-3">Бүтээгдэхүүн</h3>
+          <h3 className="font-semibold mb-3">Products</h3>
           <ul className="space-y-2 text-sm">
-            <li>Сонгон шалгаруулалтын тоглоом</li>
-            <li>Багийн сэтгэл зүй</li>
-            <li>Тоглоомд суурилсан судалгаа</li>
-            <li>Burnout тоглоом</li>
-            <li>Ажилтны оролцоот байдал</li>
+            <li>Recruitment Game</li>
+            <li>Team Psychology</li>
+            <li>Game-based Surveys</li>
+            <li>Burnout Game</li>
+            <li>Employee Engagement</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-3">Судалгаа</h3>
+          <h3 className="font-semibold mb-3">Research</h3>
           <ul className="space-y-2 text-sm">
-            <li>Бүтээгдэхүүн</li>
-            <li>Бидний түүх</li>
-            <li>Холбоо барих</li>
+            <li>Products</li>
+            <li>Our Story</li>
+            <li>Contact</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-3">Холбоо барих</h3>
+          <h3 className="font-semibold mb-3">Contact</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <MdOutlineMailOutline />

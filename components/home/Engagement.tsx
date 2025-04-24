@@ -17,7 +17,7 @@ const sections = [
   {
     id: "ona",
     name: "ONA",
-    img: "/img/home/engagement/",
+    img: "/img/home/engagement/Ona.png",
     desc: "Organizational Network Analysis let leaders get to know the relationship amongst the Team and make critical changes to retain top talents",
   },
   {
