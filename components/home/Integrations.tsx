@@ -5,6 +5,16 @@ const Integrations: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const isInView = useInView(ref, { amount: 0.5, once: false });
+  const [mobile, setMobile] = React.useState(false);
+
+  const isMobile = () => window.innerWidth <= 768;
+
+  useEffect(() => {
+    const handleResize = () => setMobile(isMobile());
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -21,13 +31,24 @@ const Integrations: React.FC = () => {
     const dots: { x: number; y: number; dx: number; dy: number }[] = [];
     let lines: { x: number; y: number; dx: number; dy: number }[][] = [];
 
-    for (let i = 0; i < 120; i++) {
-      dots.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        dx: (Math.random() - 0.5) * 2,
-        dy: (Math.random() - 0.5) * 2,
-      });
+    if (mobile) {
+      for (let i = 0; i < 120; i++) {
+        dots.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          dx: (Math.random() - 0.5) * 2,
+          dy: (Math.random() - 0.5) * 2,
+        });
+      }
+    } else {
+      for (let i = 0; i < 60; i++) {
+        dots.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          dx: (Math.random() - 0.5) * 2,
+          dy: (Math.random() - 0.5) * 2,
+        });
+      }
     }
 
     const calculateDistance = (
@@ -89,86 +110,115 @@ const Integrations: React.FC = () => {
       className="relative w-full h-screen flex items-center justify-center bg-transparent"
     >
       <canvas ref={canvasRef} />
-      <h1 className="text-[88px] font-bold absolute">Integrations</h1>
+      <h1 className="text-[44px] md:text-[88px] font-bold absolute">
+        Integrations
+      </h1>
 
       {[
         {
           src: "/img/home/integ/viber.svg",
-          className: "top-1/5 left-1/6 h-24",
+          className: "md:top-1/5 top-1/4 left-[12%] md:left-1/6 md:h-24 h-16",
           x: -200,
           y: -200,
+          mobileX: -100,
+          mobileY: -100,
         },
         {
           src: "/img/home/integ/whatsapp.svg",
-          className: "top-1/8 left-1/3 ms-10 h-24",
+          className:
+            "top-1/8 left-1/2 transform -translate-x-1/2 md:left-1/3  md:translate-x-0 md:ms-10 md:h-24 h-16",
           x: -50,
           y: -200,
+          mobileX: -0,
+          mobileY: -200,
         },
         {
           src: "/img/home/integ/powerapp.svg",
-          className: "top-1/8 right-1/3 me-10 h-24",
+          className:
+            "top-1/4 right-[20%] md:top-1/8 md:right-1/3  md:me-10 md:h-26 h-16",
           x: 50,
           y: -200,
+          mobileX: 100,
+          mobileY: -100,
         },
         {
           src: "/img/home/integ/outlook.svg",
-          className: "top-1/5 right-1/5 h-20 mt-10",
+          className:
+            "top-1/3 right-[10%] mt-8 md:top-1/5 md:right-1/5 md:h-20 h-14 md:mt-10",
           x: 200,
           y: -200,
+          mobileX: 200,
+          mobileY: 0,
         },
         {
           src: "/img/home/integ/odoo.svg",
-          className: "right-1/12",
+          className: "md:right-1/12 md:mt-0 mt-28 right-[4%] w-32 md:w-auto",
           x: 400,
           y: 0,
+          mobileX: 200,
+          mobileY: 0,
         },
         {
           src: "/img/home/integ/teams.svg",
-          className: "bottom-1/4 right-1/5 h-20",
+          className: "bottom-1/4 right-[12%] md:right-1/5 md:h-20 h-14",
           x: 200,
           y: 200,
+          mobileX: 200,
+          mobileY: 200,
         },
         {
           src: "/img/home/integ/calendly.svg",
-          className: "bottom-1/10 right-1/3 ps-20",
+          className:
+            "bottom-1/8 left-1/2 transform -translate-x-1/2 md:translate-x-0 md:bottom-1/10 md:right-1/3 md:ps-20",
           x: 50,
           y: 200,
+          mobileX: 0,
+          mobileY: 200,
         },
         {
           src: "/img/home/integ/gsuite.svg",
-          className: "bottom-1/10 left-1/3 w-60 pe-20",
+          className:
+            "bottom-1/4 left-[12%] md:bottom-1/10 md:left-1/3 w-20 md:w-60 md:pe-20",
           x: -50,
           y: 200,
+          mobileX: -100,
+          mobileY: 200,
         },
-        // {
-        //   src: "/img/home/integ/vertex.svg",
-        //   className: "top-32 left-60",
-        //   x: -200,
-        //   y: -200,
-        // },
         {
           src: "/img/home/integ/green.svg",
-          className: "bottom-1/4 left-1/8",
+          className: "mt-32 left-[4%] md:bottom-1/4 md:left-1/8 md:w-auto w-40",
           x: -200,
           y: 200,
+          mobileX: -200,
+          mobileY: 0,
         },
         {
           src: "/img/home/integ/oauth.svg",
-          className: "left-1/12 h-26",
+          className: "top-1/3 left-[5%] mt-6 md:mt-8 md:left-1/12 md:h-26 h-16",
           x: -400,
           y: 0,
+          mobileX: -200,
+          mobileY: 0,
         },
       ].map((item, index) => (
         <motion.img
           key={index}
           src={item.src}
           alt="Integration Logo"
-          className={`absolute ${item.className} h-16`}
-          initial={{ opacity: 0, x: item.x, y: item.y }}
+          className={`absolute ${item.className} h-12 md:h-16`}
+          initial={{
+            opacity: 0,
+            x: mobile ? item.mobileX ?? item.x : item.x,
+            y: mobile ? item.mobileY ?? item.y : item.y,
+          }}
           animate={
             isInView
               ? { opacity: 1, x: 0, y: 0 }
-              : { opacity: 0, x: item.x, y: item.y }
+              : {
+                  opacity: 0,
+                  x: mobile ? item.mobileX ?? item.x : item.x,
+                  y: mobile ? item.mobileY ?? item.y : item.y,
+                }
           }
           transition={{ duration: 0.8 }}
         />
