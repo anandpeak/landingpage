@@ -12,7 +12,6 @@ export default function Comments() {
 
   const autoInterval = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto advance
   useEffect(() => {
     if (isAuto) {
       autoInterval.current = setInterval(() => {
@@ -58,8 +57,8 @@ export default function Comments() {
 
   return (
     <div className="md:mx-[12vw] mx-[4vw] mb-20">
-      <p className="text-[clamp(18px, 2.5vw, 24px)] font-semibold mb-20">
-        Хүндэт харилцагчдын сэтгэгдэл
+      <p className="text-[24px] md:text-[34px] font-semibold mb-10">
+        Our Prestigious Clients
       </p>
 
       {/* Mobile carousel */}
