@@ -1,6 +1,7 @@
 "use client";
 import comments from "../../json/comments.json";
 import { motion, AnimatePresence } from "framer-motion";
+import { PanInfo } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
 export default function Comments() {
@@ -25,7 +26,10 @@ export default function Comments() {
     };
   }, [isAuto, total]);
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ) => {
     if (info.offset.x < -50) {
       setDirection("next");
       setCurrent((prev) => (prev + 1) % total);
