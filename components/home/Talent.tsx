@@ -95,7 +95,7 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
             exit="exit"
             className="w-full h-full flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8"
           >
-            <div className="w-full md:w-[50%] h-[200px] md:h-[400px] ">
+            <div className="w-full md:w-[50%] h-[200px] md:h-[400px]">
               {chosen === 1 ? (
                 <img
                   className="w-full h-full object-contain rounded-xl"
