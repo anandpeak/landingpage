@@ -95,27 +95,20 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
             exit="exit"
             className="w-full h-full flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8"
           >
-            <div className="w-full md:w-[50%] h-[200px] md:h-[400px]">
-              {chosen === 1 ? (
-                <img
-                  className="w-full h-full object-contain rounded-xl"
-                  src="/img/home/talent/ai.gif"
-                  alt="img"
-                />
-              ) : chosen === 2 ? (
-                <img
-                  className="w-full h-full object-contain rounded-xl"
-                  src="/img/home/talent/softskill.gif"
-                  alt="img"
-                />
-              ) : (
-                <img
-                  className="w-full h-full object-contain rounded-xl"
-                  src="/img/home/talent/onboardingg.gif"
-                  alt="img"
-                />
-              )}
+            <div className="md:w-[50%] flex items-center justify-center">
+              <img
+                className="h-[200px] md:h-[400px] w-auto object-contain rounded-xl shadow-[20px_20px_40px_10px_rgba(0,0,0,0.07)]"
+                src={
+                  chosen === 1
+                    ? "/img/home/talent/ai.gif"
+                    : chosen === 2
+                    ? "/img/home/talent/softskill.gif"
+                    : "/img/home/talent/onboardingg.gif"
+                }
+                alt="img"
+              />
             </div>
+
             <div className="w-full md:w-[50%] flex flex-col justify-between gap-4">
               {chosen === 1 ? (
                 <>
@@ -154,12 +147,17 @@ const Talent: React.FC<TalentProps> = ({ chosen, setChosen }) => {
                 </>
               )}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <button className="text-[#fff] text-sm font-semibold bg-[#EE8888] px-4 py-3 rounded-xl cursor-pointer w-full sm:w-auto">
+                <button
+                  onClick={() => {
+                    window.open("https://app.metacog.mn/signup", "_blank");
+                  }}
+                  className="text-[#fff] text-sm font-semibold bg-[#EE8888] px-4 py-3 rounded-xl cursor-pointer w-full sm:w-auto"
+                >
                   Get Started
                 </button>
-                <button className="text-[#333] text-sm font-semibold bg-[#ebebeb] px-4 py-3 rounded-xl cursor-pointer w-full sm:w-auto">
+                {/* <button className="text-[#333] text-sm font-semibold bg-[#ebebeb] px-4 py-3 rounded-xl cursor-pointer w-full sm:w-auto">
                   Learn More
-                </button>
+                </button> */}
               </div>
             </div>
           </motion.div>

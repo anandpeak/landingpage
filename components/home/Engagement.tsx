@@ -94,7 +94,7 @@ export default function Engagement() {
         </nav>
 
         {/* Content */}
-        <div className="w-full md:w-3/4 h-auto md:h-[40vh]">
+        <div className="w-full md:w-3/4 h-auto md:h-[45vh]">
           <AnimatePresence mode="wait">
             {sections.map(
               (section) =>
@@ -107,13 +107,14 @@ export default function Engagement() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="w-full md:w-[50%] h-[120px] md:h-full object-cover rounded-xl">
+                    <div className="w-full md:w-[50%] flex items-center justify-center">
                       <img
-                        className="w-full h-full object-contain rounded-xl"
+                        className="h-[120px] md:h-full w-auto object-contain rounded-xl shadow-[20px_20px_40px_10px_rgba(0,0,0,0.07)]"
                         src={section.img}
                         alt={section.name}
                       />
                     </div>
+
                     <div className="w-full md:w-[50%] h-auto md:h-full flex flex-col gap-4">
                       <p className="text-[28px] md:text-[34px] text-[#333] font-semibold">
                         {section.name}
