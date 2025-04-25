@@ -101,7 +101,7 @@ export default function Engagement() {
                 activeSection === section.id && (
                   <motion.section
                     key={section.id}
-                    className="h-auto md:h-full flex flex-col md:flex-row items-center justify-between gap-10 border border-[#e6e6e6] rounded-4xl p-6 md:p-8 shadow-md"
+                    className="h-auto md:h-full flex flex-col md:flex-row items-center justify-between gap-10 border border-[#e6e6e6] rounded-4xl p-6 md:p-8 shadow-md "
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
