@@ -22,8 +22,12 @@
   font-style: italic;
 }
 
-/* Apply to Body */
-body {
-  background-color: rgb(245, 246, 246);
-  font-family: "GIP-Regular", sans-serif;
+/* in your styles.css or global.css */
+.bg-dots {
+  background-color: white;
+  background-image: radial-gradient(
+    #d1d5db 1px,
+    transparent 1px
+  ); /* #d1d5db is Tailwind's gray-300 */
+  background-size: 20px 20px;
 }

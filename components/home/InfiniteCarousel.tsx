@@ -38,7 +38,7 @@ const InfiniteCarousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden relative w-full  py-6 mt-40 mb-20">
+    <div className="overflow-hidden relative w-full  py-6 mb-20">
       <motion.div
         ref={carouselRef}
         className="flex space-x-16 w-max"

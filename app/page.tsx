@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div className="relative overflow-hidden bg-[#fff]">
-      <div className="flex flex-col lg:flex-row items-center justify-between mx-6 lg:mx-28 mt-20 gap-10 lg:gap-20 text-center lg:text-left">
+      <div className="bg-dots flex flex-col lg:flex-row items-center justify-between px-6 lg:px-28 pt-20 gap-10 lg:gap-20 text-center lg:text-left pb-20">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
