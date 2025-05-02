@@ -18,7 +18,7 @@ const Table = () => {
       {/* Tabs */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 relative mb-10">
         <motion.div
-          className="hidden md:block w-[200px] h-[43px] bg-[#DC7F71] absolute rounded-3xl "
+          className="hidden md:block w-[200px] h-[39px] bg-[#DC7F71] absolute rounded-3xl "
           initial={{ top: "0px", left: "0px" }}
           animate={
             active === 1
@@ -36,7 +36,7 @@ const Table = () => {
           >
             Contact us
           </button>
-          <div className="hidden sm:block w-[2px] h-[24px] bg-[#E8E8E8]" />
+          <div className="hidden sm:block w-[2px] h-[39px] bg-[#E8E8E8]" />
           <button
             className={`w-full sm:w-[200px] px-4 py-2 rounded-3xl transition-colors duration-300 cursor-pointer ${
               active === 2 && "md:bg-none sm:bg-[#DC7F71] bg-[#DC7F71]"
@@ -45,7 +45,7 @@ const Table = () => {
           >
             Test the product
           </button>
-          <div className="hidden sm:block w-[2px] h-[24px] bg-[#E8E8E8]" />
+          <div className="hidden sm:block w-[2px] h-[39px] bg-[#E8E8E8]" />
           <Link
             href="https://calendly.com/khurelbaatar/book-a-meeting-with-oneplace-hr"
             target="_blank"
