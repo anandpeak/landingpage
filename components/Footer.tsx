@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="pt-10 pb-6 px-[12vw] text-black mt-10 bg-[#f7f7f7]">
       <div className="flex md:flex-row sm:flex-col flex-col justify-between w-full sm:space-y-10 space-y-10 md:space-y-0">
-        <div>
+        {/* <div>
           <h3 className="font-semibold mb-3">Products</h3>
           <ul className="space-y-2 text-sm">
             <li>Recruitment Game</li>
@@ -29,7 +29,7 @@ const Footer = () => {
             <li>Our Story</li>
             <li>Contact</li>
           </ul>
-        </div>
+        </div> */}
 
         <div>
           <h3 className="font-semibold mb-3">Contact</h3>

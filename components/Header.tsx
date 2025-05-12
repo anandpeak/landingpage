@@ -73,7 +73,15 @@ export default function Header() {
               <option value="mn">Мон</option>
             </select>
           </div>
-          <button className="bg-[#EE8888] md:px-6 py-2 sm:px-4 px-4 rounded-[30px] text-[#fff] hover:opacity-50 cursor-pointer md:text-base sm:text-sm text-sm">
+          <button
+            className="bg-[#EE8888] md:px-6 py-2 sm:px-4 px-4 rounded-[30px] text-[#fff] hover:opacity-50 cursor-pointer md:text-base sm:text-sm text-sm"
+            onClick={() =>
+              window.open(
+                "https://calendly.com/khurel-oneplacehr/demo-session-with-oneplace-hr",
+                "_blank"
+              )
+            }
+          >
             Try for free
           </button>
         </div>

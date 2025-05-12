@@ -45,9 +45,10 @@ const Table = () => {
           >
             Test the product
           </button>
+
           <div className="hidden sm:block w-[2px] h-[39px] bg-[#E8E8E8]" />
           <Link
-            href="https://calendly.com/khurelbaatar/book-a-meeting-with-oneplace-hr"
+            href="https://calendly.com/khurel-oneplacehr/demo-session-with-oneplace-hr"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-[200px] px-4 py-2 rounded-3xl cursor-pointer text-center"

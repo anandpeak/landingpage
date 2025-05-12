@@ -80,7 +80,7 @@ export default function Home() {
               scrollToTop();
             } else {
               window.open(
-                "https://calendly.com/khurelbaatar/book-a-meeting-with-oneplace-hr",
+                "https://calendly.com/khurel-oneplacehr/demo-session-with-oneplace-hr",
                 "_blank"
               );
             }
